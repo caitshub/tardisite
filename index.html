@@ -11,7 +11,7 @@
         :root {
             --primary: #0a2540;
             --secondary: #1e4d7b;
-            --accent-orange: #ff6b35;
+            --accent-orange: ##5DA899;
             --accent-teal: #00d4aa;
             --accent-purple: #8b5cf6;
             --text-dark: #1a1a2e;
@@ -650,6 +650,158 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* What is a Tardigrade - New Styles */
+        .taxonomy-section {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .latin-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-style: italic;
+            color: var(--accent-purple);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            text-align: left;
+        }
+
+        .section-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Microscopy Grid */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .microscopy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .microscopy-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .microscopy-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .microscopy-item .media-placeholder {
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .image-caption {
+            padding: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Content Paragraph */
+        .content-paragraph {
+            max-width: 900px;
+            margin: 4rem auto;
+        }
+
+        .body-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            margin: 5rem 0;
+            padding: 3rem;
+            background: var(--bg-light);
+            border-radius: 25px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .comparison-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .comparison-item:hover {
+            transform: scale(1.02);
+        }
+
+        .comparison-placeholder {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .comparison-details {
+            padding: 2rem;
+        }
+
+        .comparison-caption {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .comparison-specs {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .comparison-note {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .comparison-note p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -721,33 +873,87 @@
                         <p>Also known as water bears or moss piglets, tardigrades are microscopic animals renowned for their extraordinary survival abilities</p>
                     </div>
 
-                    <div class="fact-box">
+                    <!-- Latin Name Section -->
+                    <div class="taxonomy-section">
+                        <h3 class="latin-name">Phylum Tardigrada</h3>
+                        <p class="intro-text">Tardigrades are microscopic, water-dwelling animals first described by Johann August Ephraim Goeze in 1773. These remarkable eight-legged segmented micro-animals have captivated researchers for centuries due to their unique morphology and extraordinary ability to survive extreme environmental conditions. With over 1,300 described species distributed across terrestrial, freshwater, and marine ecosystems worldwide, tardigrades represent a distinct phylum of ecdysozoans, sharing ancestry with arthropods and nematodes.</p>
+                    </div>
+
+                    <!-- Light Microscopy Images Section -->
+                    <div class="image-gallery-section">
+                        <h4 class="section-subtitle">Light Microscopy</h4>
+                        <div class="microscopy-grid">
+                            <div class="microscopy-item">
+                                <div class="media-placeholder" style="background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);">🔬</div>
+                                <p class="image-caption">Tardigrade in active state (400x magnification)</p>
+                            </div>
+                            <div class="microscopy-item">
+                                <div class="media-placeholder" style="background: linear-gradient(135deg, #fae8ff 0%, #e0e7ff 100%);">🔬</div>
+                                <p class="image-caption">Lateral view showing leg structure (600x magnification)</p>
+                            </div>
+                            <div class="microscopy-item">
+                                <div class="media-placeholder" style="background: linear-gradient(135deg, #dfe7fd 0%, #d4e8e8 100%);">🔬</div>
+                                <p class="image-caption">Tardigrade in tun state (cryptobiosis)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Paragraph -->
+                    <div class="content-paragraph">
+                        <p class="body-text">Despite their diminutive size—typically ranging from 0.3 to 0.5 millimeters in length—tardigrades possess a complete suite of organ systems including a digestive tract, nervous system with a dorsal brain, and specialized musculature. Their cuticle, which must be periodically molted during growth, provides protection while maintaining flexibility. The tardigrade body plan consists of a head segment followed by four body segments, each bearing a pair of legs terminated by claws or adhesive discs adapted to their specific ecological niche.</p>
+                    </div>
+
+                    <!-- Size Comparison Section -->
+                    <div class="comparison-section">
+                        <h4 class="section-subtitle">Scale Comparison: Tardigrade vs. Mammalian Neuron</h4>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <div class="media-placeholder comparison-placeholder" style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);">
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 4rem; margin-bottom: 1rem;">🧠</div>
+                                        <div style="font-size: 1.1rem; font-weight: 600; color: var(--primary);">Mammalian Neuron</div>
+                                    </div>
+                                </div>
+                                <div class="comparison-details">
+                                    <p class="comparison-caption"><strong>Mammalian Pyramidal Neuron</strong></p>
+                                    <p class="comparison-specs">Cell body: ~20-30 μm diameter<br>
+                                    Total length with dendrites: ~100-200 μm<br>
+                                    Axon can extend: up to 1 meter or more</p>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="media-placeholder comparison-placeholder" style="background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);">
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 4rem; margin-bottom: 1rem;">🦠</div>
+                                        <div style="font-size: 1.1rem; font-weight: 600; color: var(--primary);">Entire Tardigrade</div>
+                                    </div>
+                                </div>
+                                <div class="comparison-details">
+                                    <p class="comparison-caption"><strong>Adult Tardigrade</strong></p>
+                                    <p class="comparison-specs">Total body length: ~300-500 μm<br>
+                                    Width: ~100-150 μm<br>
+                                    Contains: ~10,000-20,000 neurons</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-note">
+                            <p><em>A single mammalian pyramidal neuron can approach the length of an entire tardigrade, yet tardigrades orchestrate complex behaviors through their compact nervous system containing thousands of neurons.</em></p>
+                        </div>
+                    </div>
+
+                    <!-- Remarkable Characteristics Box -->
+                    <div class="fact-box" style="margin-top: 4rem;">
                         <h3>Remarkable Characteristics</h3>
                         <ul class="fact-list">
-                            <li>Size ranges from 0.3 to 0.5 mm in length</li>
                             <li>Can survive temperatures from -272°C to 150°C</li>
                             <li>Withstand pressures 6 times greater than the deepest ocean</li>
                             <li>Survive radiation doses 1,000 times lethal to humans</li>
-                            <li>Can live without water for up to 30 years</li>
-                            <li>Have survived exposure to outer space</li>
-                            <li>Eight legs with claws or adhesive discs</li>
-                            <li>Over 1,300 known species worldwide</li>
+                            <li>Can live without water for up to 30 years in cryptobiosis</li>
+                            <li>Have survived exposure to outer space vacuum</li>
+                            <li>Found from mountaintops to deep ocean trenches</li>
+                            <li>Can repair extensive DNA damage after extreme stress</li>
+                            <li>Some species can survive 5,700 grays of radiation</li>
                         </ul>
-                    </div>
-
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h3>Cryptobiosis</h3>
-                            <p>Tardigrades can enter a death-like state called cryptobiosis, suspending their metabolism to survive extreme conditions. In this state, they can endure for decades before reviving when conditions improve.</p>
-                        </div>
-                        <div class="info-card">
-                            <h3>Habitat</h3>
-                            <p>Found in diverse environments worldwide, from mountaintops to deep sea trenches, from tropical rainforests to Antarctic ice. They thrive in moss, lichens, leaf litter, and marine sediments.</p>
-                        </div>
-                        <div class="info-card">
-                            <h3>Research Importance</h3>
-                            <p>Understanding tardigrade survival mechanisms could revolutionize fields from medicine to space exploration, offering insights into stress tolerance and long-term preservation.</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -967,7 +1173,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Connect</h4>
-                    <p>Email: info@tardigradeconsortium.org</p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c55525a537c485d4e58555b4e5d58595f53524f534e4855495112534e5b">[email&#160;protected]</a></p>
                     <p>Twitter: @TardiResearch</p>
                     <p>GitHub: tardigrade-consortium</p>
                 </div>
@@ -978,31 +1184,35 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Page Navigation System
-        const navLinks = document.querySelectorAll('.nav-link');
         const pageSections = document.querySelectorAll('.page-section');
 
-        navLinks.forEach(link => {
+        // Function to navigate to a page
+        function navigateToPage(targetPage) {
+            // Update active states for all nav links
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll(`[data-page="${targetPage}"]`).forEach(l => l.classList.add('active'));
+            
+            // Show target page with animation
+            pageSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const targetSection = document.getElementById(targetPage);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Add click handlers to all navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                
-                // Get target page
                 const targetPage = link.getAttribute('data-page');
-                
-                // Update active states
-                navLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-                
-                // Show target page with animation
-                pageSections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                
-                const targetSection = document.getElementById(targetPage);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (targetPage) {
+                    navigateToPage(targetPage);
                 }
             });
         });
@@ -1023,27 +1233,6 @@
             e.target.reset();
         });
 
-        // Smooth scroll for hero CTA
-        document.querySelector('.cta-button').addEventListener('click', (e) => {
-            const targetPage = e.target.getAttribute('data-page');
-            if (targetPage) {
-                e.preventDefault();
-                
-                // Update navigation
-                navLinks.forEach(l => l.classList.remove('active'));
-                const joinLink = document.querySelector(`[data-page="${targetPage}"]`);
-                if (joinLink) joinLink.classList.add('active');
-                
-                // Show page
-                pageSections.forEach(section => section.classList.remove('active'));
-                const targetSection = document.getElementById(targetPage);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            }
-        });
-
         // Add scroll animations for elements coming into view
         const observerOptions = {
             threshold: 0.1,
@@ -1060,7 +1249,7 @@
         }, observerOptions);
 
         // Observe all cards and timeline items
-        document.querySelectorAll('.info-card, .timeline-item, .tool-card').forEach(el => {
+        document.querySelectorAll('.info-card, .timeline-item, .tool-card, .microscopy-item, .comparison-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
