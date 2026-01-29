@@ -1,12 +1,7 @@
 (() => {
   const menuToggle = document.getElementById('menuToggle');
-    document.addEventListener('click', (e) => {
-  if (!navMenu || !menuToggle) return;
-  const clickInsideNav = navMenu.contains(e.target);
-  const clickOnToggle = menuToggle.contains(e.target);
-  if (!clickInsideNav && !clickOnToggle) setMenu(false);
-});
   const navMenu = document.getElementById('navMenu');
+
   const sections = Array.from(document.querySelectorAll('.page-section'));
   const navLinks = Array.from(document.querySelectorAll('.nav-link'));
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -18,24 +13,32 @@
     menuToggle.setAttribute('aria-expanded', String(open));
   }
 
-  // Menu toggle
+  // Close menu when clicking outside (mobile UX)
+  document.addEventListener('click', (e) => {
+    if (!navMenu || !menuToggle) return;
+    const clickInsideNav = navMenu.contains(e.target);
+    const clickOnToggle = menuToggle.contains(e.target);
+    if (!clickInsideNav && !clickOnToggle) setMenu(false);
+  });
+
+  // Menu toggle click
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
       setMenu(!navMenu.classList.contains('active'));
     });
-
-    // Close menu on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') setMenu(false);
-    });
   }
+
+  // Close menu on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenu(false);
+  });
 
   function setActiveNav(pageId) {
     navLinks.forEach(l => l.classList.remove('active'));
     document.querySelectorAll(`[data-page="${pageId}"]`).forEach(l => l.classList.add('active'));
   }
 
-  function showPage(pageId, { push = true, focus = true } = {}) {
+  function showPage(pageId, { push = true } = {}) {
     const target = document.getElementById(pageId);
     if (!target) return;
 
@@ -53,12 +56,12 @@
     // Close mobile menu after navigation
     if (window.innerWidth <= 768) setMenu(false);
 
-    // Scroll + focus to simulate a “page change”
+    // Scroll to top on "page change"
     const behavior = prefersReducedMotion ? 'auto' : 'smooth';
-    window.scrollTo({ top: 0, behavior });  
-      }
+    window.scrollTo({ top: 0, behavior });
+  }
 
-  // Intercept nav clicks (including CTA + footer links because they use .nav-link)
+  // Intercept SPA nav links
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const pageId = link.dataset.page;
@@ -68,13 +71,14 @@
     });
   });
 
-  // Deep links on load + hash edits
+  // Deep link on load + hash edits
   function syncFromHash() {
     const pageId = location.hash.slice(1) || 'home';
-    if (document.getElementById(pageId)) showPage(pageId, { push: false, focus: false });
-    else showPage('home', { push: false, focus: false });
+    if (document.getElementById(pageId)) showPage(pageId, { push: false });
+    else showPage('home', { push: false });
   }
 
+  // Back/forward
   window.addEventListener('popstate', (e) => {
     const pageId = e.state?.pageId || location.hash.slice(1) || 'home';
     showPage(pageId, { push: false });
@@ -123,10 +127,11 @@
           const data = await res.json().catch(() => ({}));
           if (statusEl) {
             statusEl.style.color = 'var(--accent-rose)';
-            statusEl.textContent = data?.error || 'Sorry—there was a problem sending the form. Please try again.';
+            statusEl.textContent =
+              data?.error || 'Sorry—there was a problem sending the form. Please try again.';
           }
         }
-      } catch (err) {
+      } catch {
         if (statusEl) {
           statusEl.style.color = 'var(--accent-rose)';
           statusEl.textContent = 'Network error—please try again.';
