@@ -1131,9 +1131,9 @@
     <nav aria-label="Primary">
         <div class="container">
             <a class="logo nav-link" href="#home" data-page="home" style="text-decoration:none;">
-                <div class="logo-icon">T</div>
-                <span>Tardigrade Consortium</span>
-            </div>
+    <div class="logo-icon">T</div>
+    <span>Tardigrade Consortium</span>
+</a>
     <button class="menu-toggle" id="menuToggle"
                 aria-controls="navMenu"
                 aria-expanded="false"
@@ -1143,7 +1143,7 @@
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
     </button>
-            <ul id="navMenu">
+            <ul id="navMenu" aria-label="Site">
                 <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
                 <li><a href="#what-is" class="nav-link" data-page="what-is">What is a Tardigrade</a></li>
                 <li><a href="#connectome" class="nav-link" data-page="connectome">Whole Connectome</a></li>
@@ -1522,6 +1522,12 @@
     <script>
 (() => {
   const menuToggle = document.getElementById('menuToggle');
+    document.addEventListener('click', (e) => {
+  if (!navMenu || !menuToggle) return;
+  const clickInsideNav = navMenu.contains(e.target);
+  const clickOnToggle = menuToggle.contains(e.target);
+  if (!clickInsideNav && !clickOnToggle) setMenu(false);
+});
   const navMenu = document.getElementById('navMenu');
   const sections = Array.from(document.querySelectorAll('.page-section'));
   const navLinks = Array.from(document.querySelectorAll('.nav-link'));
