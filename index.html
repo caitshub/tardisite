@@ -1213,11 +1213,16 @@
 
                     <!-- Light Microscopy Images Section -->
                     <div class="image-gallery-section">
-                        <h4 class="section-subtitle">Light Microscopy</h4>
+                        <!-- <h4 class="section-subtitle">Light Microscopy</h4> -->
                         <div class="microscopy-grid">
                             <div class="microscopy-item">
-                                <div class="media-placeholder" style="background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);">🔬</div>
-                                <p class="image-caption">Tardigrade in active state (400x magnification)</p>
+                                <img src="/images/better_lighting_test.png"
+                                  alt="Tardigrade lighting test"
+                                  loading="lazy"
+                                  width="1200"
+                                  height="900"
+                                />
+                                <p class="image-caption">Tardigrade lighting test (? magnification)</p>
                             </div>
                             <div class="microscopy-item">
                                 <div class="media-placeholder" style="background: linear-gradient(135deg, #fae8ff 0%, #e0e7ff 100%);">🔬</div>
@@ -1558,13 +1563,6 @@
     document.querySelectorAll(`[data-page="${pageId}"]`).forEach(l => l.classList.add('active'));
   }
 
-  function focusSection(section) {
-    const heading = section.querySelector('h1, h2, [role="heading"]');
-    const target = heading || section;
-    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
-    target.focus({ preventScroll: true });
-  }
-
   function showPage(pageId, { push = true, focus = true } = {}) {
     const target = document.getElementById(pageId);
     if (!target) return;
@@ -1585,8 +1583,7 @@
 
     // Scroll + focus to simulate a “page change”
     const behavior = prefersReducedMotion ? 'auto' : 'smooth';
-    window.scrollTo({ top: 0, behavior });
-    if (focus) focusSection(target);  
+    window.scrollTo({ top: 0, behavior });  
       }
 
   // Intercept nav clicks (including CTA + footer links because they use .nav-link)
