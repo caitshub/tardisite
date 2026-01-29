@@ -6,14 +6,16 @@
     <title>Tardigrade Research Consortium</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0a2540;
-            --secondary: #1e4d7b;
-            --accent-orange: #5DA899;
-            --accent-teal: #00d4aa;
-            --accent-purple: #8b5cf6;
+            /* Paul Tol's Muted Palette - Colorblind Accessible */
+            --primary: #332288;        /* Indigo */
+            --secondary: #6699CC;      /* Light Blue */
+            --accent-rose: #CC6677;    /* Rose */
+            --accent-teal: #44AA99;    /* Teal */
+            --accent-sand: #DDCC77;    /* Sand */
+            --accent-wine: #882255;    /* Wine */
             --text-dark: #1a1a2e;
             --text-light: #6b7280;
             --bg-light: #f8fafc;
@@ -66,7 +68,7 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
@@ -78,7 +80,7 @@
         .logo-icon {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+            background: linear-gradient(135deg, var(--accent-teal), var(--secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -92,6 +94,35 @@
             display: flex;
             list-style: none;
             gap: 2.5rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         nav a {
@@ -110,12 +141,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent-orange);
+            background: var(--accent-rose);
             transition: width 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--accent-orange);
+            color: var(--accent-rose);
         }
 
         nav a:hover::after,
@@ -124,7 +155,7 @@
         }
 
         nav a.active {
-            color: var(--accent-orange);
+            color: var(--accent-rose);
         }
 
         /* Main Content Container */
@@ -177,8 +208,8 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(circle at 20% 50%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(68, 170, 153, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(204, 102, 119, 0.15) 0%, transparent 50%);
             animation: pulse 15s ease-in-out infinite;
         }
 
@@ -195,7 +226,7 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 4.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
@@ -224,7 +255,7 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: var(--accent-orange);
+            background: var(--accent-rose);
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -232,13 +263,13 @@
             font-size: 1.05rem;
             transition: all 0.3s ease;
             animation: fadeInUp 0.8s ease-out 0.6s both;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 10px 30px rgba(204, 102, 119, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
-            background: #ff5722;
+            box-shadow: 0 15px 40px rgba(204, 102, 119, 0.4);
+            background: var(--accent-wine);
         }
 
         /* Content Sections */
@@ -252,7 +283,7 @@
         }
 
         .section-header h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -297,11 +328,11 @@
             justify-content: center;
             font-size: 2rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+            background: linear-gradient(135deg, var(--accent-teal), var(--secondary));
         }
 
         .info-card h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 1.6rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -314,7 +345,7 @@
 
         /* Tardigrade Facts */
         .fact-box {
-            background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-teal) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-teal) 100%);
             border-radius: 25px;
             padding: 3rem;
             color: white;
@@ -333,7 +364,7 @@
         }
 
         .fact-box h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
         }
@@ -355,7 +386,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--accent-orange);
+            color: var(--accent-sand);
             font-weight: bold;
         }
 
@@ -477,7 +508,7 @@
         .submit-button {
             width: 100%;
             padding: 1.2rem;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+            background: linear-gradient(135deg, var(--accent-teal), var(--primary));
             color: white;
             border: none;
             border-radius: 12px;
@@ -489,7 +520,7 @@
 
         .submit-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(51, 34, 136, 0.3);
         }
 
         /* Tools Section */
@@ -499,11 +530,11 @@
             padding: 2.5rem;
             margin-bottom: 2rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid var(--accent-orange);
+            border-left: 5px solid var(--accent-rose);
         }
 
         .tool-card h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 1.8rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -523,7 +554,7 @@
         }
 
         .tool-link:hover {
-            color: var(--accent-purple);
+            color: var(--primary);
             transform: translateX(5px);
         }
 
@@ -541,7 +572,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(to bottom, var(--accent-teal), var(--accent-purple));
+            background: linear-gradient(to bottom, var(--accent-teal), var(--primary));
         }
 
         .timeline-item {
@@ -557,13 +588,13 @@
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            background: var(--accent-orange);
+            background: var(--accent-rose);
             border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--accent-orange);
+            box-shadow: 0 0 0 3px var(--accent-rose);
         }
 
         .timeline-item h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
@@ -590,7 +621,7 @@
         }
 
         .footer-section h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 1.3rem;
             margin-bottom: 1rem;
         }
@@ -605,7 +636,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--accent-teal);
+            color: var(--accent-sand);
         }
 
         .footer-bottom {
@@ -617,24 +648,109 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav .container {
+                flex-direction: row;
+                padding: 1rem 1.5rem;
+            }
+
             nav ul {
-                gap: 1rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                max-height: 500px;
+                padding: 1rem 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
             }
 
             nav a {
-                font-size: 0.85rem;
+                display: block;
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 4rem 0;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                margin-bottom: 1rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.8rem;
+                font-size: 0.95rem;
             }
 
             .section-header h2 {
                 font-size: 2rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .info-card {
+                padding: 2rem;
             }
 
             .gallery-grid {
@@ -643,6 +759,171 @@
 
             .timeline {
                 padding-left: 2rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item::before {
+                left: -2.5rem;
+                width: 12px;
+                height: 12px;
+            }
+
+            .timeline-item h4 {
+                font-size: 1.2rem;
+            }
+
+            .fact-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .fact-box h3 {
+                font-size: 1.6rem;
+            }
+
+            .fact-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .join-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .tool-card {
+                padding: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            /* Mobile-specific styles for new sections */
+            .latin-name {
+                font-size: 1.8rem;
+            }
+
+            .intro-text,
+            .body-text {
+                font-size: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .microscopy-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .comparison-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .comparison-placeholder {
+                aspect-ratio: 1.2;
+            }
+
+            .comparison-note {
+                padding: 1.5rem;
+            }
+
+            /* Minimalist Footer for Mobile */
+            footer {
+                padding: 2.5rem 0 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .footer-section p,
+            .footer-section a {
+                font-size: 0.9rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .footer-bottom {
+                padding-top: 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            /* Hide less critical footer sections on mobile */
+            .footer-section:last-child {
+                display: none;
+            }
+        }
+
+        /* Small mobile screens */
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+                padding: 0.3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .card-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+            }
+
+            .fact-box::before {
+                font-size: 8rem;
+                right: -1rem;
+                top: -2rem;
+            }
+
+            .latin-name {
+                font-size: 1.5rem;
+            }
+
+            .comparison-details {
+                padding: 1.5rem;
+            }
+
+            .comparison-caption {
+                font-size: 1.1rem;
             }
         }
 
@@ -659,12 +940,11 @@
         }
 
         .latin-name {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 2.5rem;
-            font-style: italic;
-            color: var(--accent-purple);
+            color: var(--accent-wine);
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .intro-text {
@@ -675,7 +955,7 @@
         }
 
         .section-subtitle {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 1.8rem;
             color: var(--primary);
             margin-bottom: 2rem;
@@ -775,7 +1055,7 @@
         }
 
         .comparison-caption {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Calistoga', serif;
             font-size: 1.3rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -793,7 +1073,7 @@
             padding: 2rem;
             background: white;
             border-radius: 15px;
-            border-left: 4px solid var(--accent-orange);
+            border-left: 4px solid var(--accent-rose);
         }
 
         .comparison-note p {
@@ -812,7 +1092,12 @@
                 <div class="logo-icon">T</div>
                 <span>Tardigrade Consortium</span>
             </div>
-            <ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
                 <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
                 <li><a href="#what-is" class="nav-link" data-page="what-is">What is a Tardigrade</a></li>
                 <li><a href="#connectome" class="nav-link" data-page="connectome">Whole Connectome</a></li>
@@ -876,7 +1161,7 @@
                     <!-- Latin Name Section -->
                     <div class="taxonomy-section">
                         <h3 class="latin-name">Phylum Tardigrada</h3>
-                        <p class="intro-text">Tardigrades are microscopic, eight-legged invertebrates that live in diverse environments ranging from deep oceans to damp moss. They are widely known for their ability to enter a dormant state called cryptobiosis, allowing them to survive extreme temperatures, high pressure, radiation, and the vacuum of space. Once reintroduced to water, they rehydrate and return to their normal active state.</p>
+                        <p class="intro-text">Tardigrades are microscopic, water-dwelling animals first described by Johann August Ephraim Goeze in 1773. These remarkable eight-legged segmented micro-animals have captivated researchers for centuries due to their unique morphology and extraordinary ability to survive extreme environmental conditions. With over 1,300 described species distributed across terrestrial, freshwater, and marine ecosystems worldwide, tardigrades represent a distinct phylum of ecdysozoans, sharing ancestry with arthropods and nematodes.</p>
                     </div>
 
                     <!-- Light Microscopy Images Section -->
@@ -900,7 +1185,7 @@
 
                     <!-- Second Paragraph -->
                     <div class="content-paragraph">
-                        <p class="body-text">Tardigrades possess a segmented body plan consisting of a head and four trunk segments, each supporting a pair of legs. Despite having a relatively small number of cells and a simple nervous system with few neurons, they exhibit complex limb coordination and can adjust their walking gaits based on the surface they are traversing. They also feature rudimentary eyespots, known as ocelli, which allow them to detect light.</p>
+                        <p class="body-text">Despite their diminutive size—typically ranging from 0.3 to 0.5 millimeters in length—tardigrades possess a complete suite of organ systems including a digestive tract, nervous system with a dorsal brain, and specialized musculature. Their cuticle, which must be periodically molted during growth, provides protection while maintaining flexibility. The tardigrade body plan consists of a head segment followed by four body segments, each bearing a pair of legs terminated by claws or adhesive discs adapted to their specific ecological niche.</p>
                     </div>
 
                     <!-- Size Comparison Section -->
@@ -1185,6 +1470,15 @@
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
         // Page Navigation System
         const pageSections = document.querySelectorAll('.page-section');
 
@@ -1203,6 +1497,12 @@
             if (targetSection) {
                 targetSection.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Close mobile menu after navigation
+            if (window.innerWidth <= 768) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
             }
         }
 
