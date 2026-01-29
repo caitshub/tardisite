@@ -1564,7 +1564,7 @@
     target.focus({ preventScroll: true });
   }
 
-  function showPage(pageId, { push = true } = {}) {
+  function showPage(pageId, { push = true, focus = true } = {}) {
     const target = document.getElementById(pageId);
     if (!target) return;
 
@@ -1585,8 +1585,8 @@
     // Scroll + focus to simulate a “page change”
     const behavior = prefersReducedMotion ? 'auto' : 'smooth';
     window.scrollTo({ top: 0, behavior });
-    focusSection(target);
-  }
+    if (focus) focusSection(target);  
+      }
 
   // Intercept nav clicks (including CTA + footer links because they use .nav-link)
   navLinks.forEach(link => {
@@ -1601,8 +1601,8 @@
   // Deep links on load + hash edits
   function syncFromHash() {
     const pageId = location.hash.slice(1) || 'home';
-    if (document.getElementById(pageId)) showPage(pageId, { push: false });
-    else showPage('home', { push: false });
+    if (document.getElementById(pageId)) showPage(pageId, { push: false, focus: false });
+    else showPage('home', { push: false, focus: false });
   }
 
   window.addEventListener('popstate', (e) => {
