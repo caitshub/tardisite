@@ -999,7 +999,8 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .microscopy-item img {
+        .microscopy-item img,
+        .microscopy-item video {
   width: 100%;
   height: auto;
   display: block;
@@ -1213,7 +1214,7 @@
 
                     <!-- Latin Name Section -->
                     <div class="taxonomy-section">
-                        <h3 class="latin-name">Phylum Tardigrada</h3>
+                        <h3 class="latin-name"><i>Phylum Tardigrada</i></h3>
                         <p class="intro-text">Tardigrades are microscopic, water-dwelling animals first described by Johann August Ephraim Goeze in 1773. These remarkable eight-legged segmented micro-animals have captivated researchers for centuries due to their unique morphology and extraordinary ability to survive extreme environmental conditions. With over 1,300 described species distributed across terrestrial, freshwater, and marine ecosystems worldwide, tardigrades represent a distinct phylum of ecdysozoans, sharing ancestry with arthropods and nematodes.</p>
                     </div>
 
@@ -1231,12 +1232,13 @@
                                 <p class="image-caption">Tardigrade lighting test (? magnification)</p>
                             </div>
                             <div class="microscopy-item">
-                                <img src="/videos/muscle_nuclei_rotat_compress.mp4"
-                                  alt="Tardigrade spin"
-                                  loading="lazy"
-                                  width="1200"
-                                  height="900"
-                                />
+                                <video
+                                  controls
+                                  preload="metadata"
+                                  playsinline
+                                >
+                                  <source src="/videos/muscle_nuclei_rotat_compress.mp4" type="video/mp4">
+                                </video>
                                 <p class="image-caption">tardi spin</p>
                             </div>
                             <div class="microscopy-item">
