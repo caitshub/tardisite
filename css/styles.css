@@ -538,7 +538,6 @@
         }
 
 /* --- Team / Members sections (Join page) --- */
-https://ukri.zoom.us/j/3896867358
 
 .member-list {
   list-style: none;
@@ -847,6 +846,90 @@ https://ukri.zoom.us/j/3896867358
                 padding: 2rem 1.5rem;
             }
 
+                /* --- Scientific Steering Group (Join page) --- */
+.team-section {
+  max-width: 1200px;
+  margin: 3.5rem auto 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1.75rem;
+}
+
+.team-card {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 2rem 2rem 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent-teal);
+}
+
+.team-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 24px;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-light);
+  margin-bottom: 1.25rem;
+}
+
+.team-details {
+  width: 100%;
+}
+
+.team-name {
+  font-family: 'Calistoga', serif;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0 0 0.35rem 0;
+  font-weight: 400;
+}
+
+.team-role {
+  margin: 0 0 0.75rem 0;
+  color: var(--accent-wine);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.team-desc {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+                .institution-name {
+  text-align: center;
+}
             .tool-card {
                 padding: 2rem;
             }
