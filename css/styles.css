@@ -160,6 +160,13 @@
             color: var(--accent-rose);
         }
 
+        /* Don’t show the nav underline on the logo link */
+        nav a.logo::after,
+        nav a.logo:hover::after,
+        nav a.logo.active::after {
+        display: none !important;
+        }
+
         /* Main Content Container */
         main {
             margin-top: 80px;
