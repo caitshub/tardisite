@@ -537,6 +537,109 @@
             box-shadow: 0 10px 30px rgba(51, 34, 136, 0.3);
         }
 
+/* --- Team / Members sections (Join page) --- */
+.team-section,
+.members-section {
+  max-width: 1000px;
+  margin: 3.5rem auto 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.team-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1rem;
+  padding: 1.25rem;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent-teal);
+}
+
+.team-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-light);
+}
+
+.team-name {
+  font-family: 'Calistoga', serif;
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin: 0 0 0.25rem 0;
+  font-weight: 400;
+}
+
+.team-role {
+  margin: 0 0 0.5rem 0;
+  color: var(--accent-wine);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.team-desc {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.member-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem 1.5rem;
+}
+
+.member-list li {
+  background: white;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  color: var(--text-dark);
+}
+
+.institution-groups {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.institution-group {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+
+.institution-name {
+  font-family: 'Calistoga', serif;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+}
+
         /* Tools Section */
         .tool-card {
             background: white;
